@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora de Indice de Masa Corporal</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Calculadora de Indice de Masa Corporal">
+  <meta name="author" content="Victor Rainier Cruz Perez">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Calculadora de Indice de Masa Corporal</h1>
+    <h2>Developing Data Products Project</h2>
+    <p>Victor Rainier Cruz Perez<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>¿Qué es el Índice de Masa Corporal?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>EL Índice de Masa Corporal es una medida para determinar la grasa del cuerpo con base en la estatura y peso de un individuo. La Organización Mundial de la Salud determina que con base en el Índice de Individual una persona puede saber si esta bajo de peso, tiene peso normal o sobrepeso.</p>
+
+<p>Así mismo propone la siguiente clasificacion:</p>
+
+<ul>
+<li>Índice de Masa Corporal  &lt;18.5       : Bajo de Peso</li>
+<li>Índice de Masa Corporal [18.5-24.9]  : Peso Normal</li>
+<li>Índice de Masa Corporal [25.0-29.9]  : Sobrepeso</li>
+<li>Índice de Masa Corporal  &gt;=30        : Obeso</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>¿Cómo se calcula el Índice de Masa Corporal?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>El Índice de Masa Corporal se calcula con base en la fórmula siguiente:</p>
+
+<p>IMC = Peso(kg) / Altura(m)\(^2\)</p>
+
+<p>Por ejemplo:</p>
+
+<pre><code class="r">peso = 75
+altura = 1.80
+IMC&lt;- peso / altura^2
+IMC
+</code></pre>
+
+<pre><code>## [1] 23.14815
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Diagnóstico</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Para determinar el estado de salud del individuo se interpreta el IMC con base en los intervalos definidos por la Organización Mundial de la Salud.</p>
+
+<pre><code class="r">fx_diagnostico&lt;-function(peso,altura){
+  indice&lt;-peso/(altura^2)
+  ifelse(indice&lt;18.5,&quot;bajo de peso&quot;,ifelse(indice&lt;25,&quot;peso normal&quot;,ifelse(indice&lt;30,&quot;sobre peso&quot;)))
+}
+</code></pre>
+
+<p>Por ejemplo un individuo con un peso de 70 Kg cuya altura sea 1.60m su interpretación sería:</p>
+
+<pre><code class="r">fx_diagnostico(70,1.60)
+</code></pre>
+
+<pre><code>## [1] &quot;sobre peso&quot;
+</code></pre>
+
+<hr>
+
+<h2>Conclusión</h2>
+
+<p>El IMC es fácil de calcular. Es un método no invasivo que relaciona de manera razonable el nivel de grasa en el cuerpo de un individuo con base en su peso y estatura. El IMC es una aproximación relativa a múltiples factores como actividad física, etnia y edad del individuo. El IMC es un índice referencial que debe ser complementado con estudios específicos a manera de obtener un valor más exacto si se requiere.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='¿Qué es el Índice de Masa Corporal?'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='¿Cómo se calcula el Índice de Masa Corporal?'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Diagnóstico'>
+         3
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
